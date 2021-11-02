@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <script>
+            
+            annee_nb_entier = window.prompt("Entrez une annee");
+            mois_chaine_de_caractere = window.prompt("Entrez un mois (en minuscule et sans accent)");
+            jour_nb_entier = String(window.prompt("Entrez un jour avec deux chiffres"));
+            mois_nb_entier = 0;
+            mois = ["janvier","fevrier","mars","avril","mai","juin","juillet","aout","septembre","octobre","novembre","decembre"];
+            mois_nb = ["01","02","03","04","05","06","07","08","08","09","10","11","12"];
+            mois_nb_entier = 0;
+            jour_loop = "";
+
+            for (i = 0; i <= mois.length;i=i+1){
+                if (mois[i] == mois_chaine_de_caractere){
+                    mois_nb_entier = mois_nb[i+1];
+                }
+            }
+
+            jour_demande = annee_nb_entier + "-" + mois_nb_entier + "-" + jour_nb_entier;
+            jour_demande = String(jour_demande);
+            console.log(jour_demande);
+
+            list_premiere_heure_date = ['2021-11-01', '2021-11-02', '2021-11-03', '2021-11-04', '2021-11-05', '2021-11-06', '2021-11-08', '2021-11-09', "2021-11-10", '2021-11-12', '2021-11-15', '2021-11-16', '2021-11-17', '2021-11-18', '2021-11-19', '2021-11-22', '2021-11-23', '2021-11-24', '2021-11-25', '2021-11-26', '2021-11-27', '2021-11-29', '2021-11-30', '2021-12-01', '2021-12-02', '2021-12-03', '2021-12-06', '2021-12-07', '2021-12-08', '2021-12-09', '2021-12-10', '2021-12-13', '2021-12-14', '2021-12-15', '2021-12-16', '2021-12-17', '2021-12-20', '2021-12-21', '2021-12-22', '2021-12-23', '2021-12-24', '2021-12-25', '2021-12-27', '2021-12-28', '2021-12-29', '2021-12-30'];
+            list_premiere_heure = ['07:30', '07:30', '07:30', '07:30', '07:30', '07:30', '08:00', '08:00', '08:00', '08:00', '08:00', '08:00', '11:00', '08:00', '09:30', '09:30', '08:00', '11:00', '08:00', '09:30', '09:30', '08:00', '09:30', '09:30', '08:00', '09:30', '08:00', '14:00', '11:00', '08:00', '09:30', '11:30', '11:00', '11:00', '08:00', '14:00', '07:30', '07:30', '07:30', '07:30', '07:30', '07:30', '07:30', '07:30', '07:30', '07:30'];
+
+            index = list_premiere_heure_date.findIndex((rank => rank === jour_demande));
+            premiere_heure = list_premiere_heure[index];
+            
+            horraire_BOGE2 = [{'heure': '5h', 'passages': ['07', '24', '41', '58']}, {'heure': '6h', 'passages': ['13', '27', '38', '47', '57']}, {'heure': '7h', 'passages': ['06', '13', '19', '25', '31', '36', '41', '45', '49', '53', '57']}, {'heure': '8h', 'passages': ['01', '05a', '09', '13', '17', '22a', '26', '30', '34a', '38', '42', '46', '50a', '54', '58']}, {'heure': '9h', 'passages': ['02a', '06', '10', '14', '18a', '22', '27', '32', '37', '42', '48', '53', '59']}, {'heure': '10h', 'passages': ['04', '10', '15', '21', '26', '32', '37', '43', '48', '54', '59']}, {'heure': '11h', 'passages': ['05', '10', '16', '21', '27', '32', '38', '43', '49', '54']}, {'heure': '12h', 'passages': ['00', '05', '11', '16', '22', '27', '33', '38', '44', '49', '55']}, {'heure': '13h', 'passages': ['00', '06', '11', '17', '22', '28', '33', '39', '44', '50', '55']}, {'heure': '14h', 'passages': ['01', '06', '12', '17', '23', '28', '34', '39', '45', '50', '56']}, {'heure': '15h', 'passages': ['01', '07', '13', '18', '24', '29', '35', '40', '46', '51', '57']}, {'heure': '16h', 'passages': ['02', '07', '12', '16', '21', '25', '29', '33', '37', '41', '45', '49', '53', '57']}, {'heure': '17h', 'passages': ['01', '05', '09', '13', '17', '21', '25', '29', '33', '37', '41', '45', '49', '53', '57']}, {'heure': '18h', 'passages': ['02a', '05', '09', '13', '18a', '22', '26', '30a', '34', '38', '42a', '46', '51', '55a', '59']}, {'heure': '19h', 'passages': ['04a', '08', '13a', '17', '21a', '25a', '30', '35a', '40', '44a', '49', '55']}, {'heure': '20h', 'passages': ['01a', '07', '13', '20a', '27', '34', '42', '50']}, {'heure': '21h', 'passages': ['00a', '10', '20', '30a', '40', '50']}, {'heure': '22h', 'passages': ['00a', '10', '25a', '39', '55a']}, {'heure': '23h', 'passages': ['10', '25a', '40']}, {'heure': '0h', 'passages': ['10V', '10b', '40V', '40c']}, {'heure': '1h', 'passages': ['10V', '40V']}, {'heure': '2h', 'passages': ['10e', '40f']}];
+            horraire_FACU2 = [{'heure': '4h', 'passages': ['52']}, {'heure': '5h', 'passages': ['11', '28', '45']}, {'heure': '6h', 'passages': ['02', '17', '31', '42', '51']}, {'heure': '7h', 'passages': ['01', '10', '17', '23', '29', '35', '40', '45', '49', '53', '57']}, {'heure': '8h', 'passages': ['01', '05', '09a', '13', '17', '21', '26a', '30', '34', '38a', '42', '46', '50', '54a', '58']}, {'heure': '9h', 'passages': ['02', '06a', '10', '14', '18', '22a', '26', '31', '36', '41', '46', '52', '57']}, {'heure': '10h', 'passages': ['03', '08', '14', '19', '25', '30', '36', '41', '47', '52', '58']}, {'heure': '11h', 'passages': ['03', '09', '14', '20', '25', '31', '36', '42', '47', '53', '58']}, {'heure': '12h', 'passages': ['04', '09', '15', '20', '26', '31', '37', '42', '48', '53', '59']}, {'heure': '13h', 'passages': ['04', '10', '15', '21', '26', '32', '37', '43', '48', '54', '59']}, {'heure': '14h', 'passages': ['05', '10', '16', '21', '27', '32', '38', '43', '49', '54']}, {'heure': '15h', 'passages': ['00', '05', '11', '17', '22', '28', '33', '39', '44', '50', '55']}, {'heure': '16h', 'passages': ['01', '06', '11', '16', '20', '25', '29', '33', '37', '41', '45', '49', '53', '57']}, {'heure': '17h', 'passages': ['01', '05', '09', '13', '17', '21', '25', '29', '33', '37', '41', '45', '49', '53', '57']}, {'heure': '18h', 'passages': ['01', '06a', '09', '13', '17', '22a', '26', '30', '34a', '38', '42', '46a', '50', '55', '59a']}, {'heure': '19h', 'passages': ['03', '08a', '12', '17a', '21', '25a', '29a', '34', '39a', '44', '48a', '53', '59']}, {'heure': '20h', 'passages': ['05a', '11', '17', '24a', '31', '38', '46', '54']}, {'heure': '21h', 'passages': ['04a', '14', '24', '34a', '44', '54']}, {'heure': '22h', 'passages': ['04a', '14', '29a', '43', '59a']}, {'heure': '23h', 'passages': ['14', '29a', '44']}, {'heure': '0h', 'passages': ['14b', '14V', '44c', '44V']}, {'heure': '1h', 'passages': ['14V', '44V']}, {'heure': '2h', 'passages': ['14e', '44f']}];
+            horraire_ECSU2 = [{'heure': '4h', 'passages': ['51']}, {'heure': '5h', 'passages': ['10', '27', '44']}, {'heure': '6h', 'passages': ['01', '16', '30', '41', '50']}, {'heure': '7h', 'passages': ['00', '09', '16', '22', '28', '34', '39', '44', '48', '52', '56']}, {'heure': '8h', 'passages': ['00', '04', '08a', '12', '16', '20', '25a', '29', '33', '37a', '41', '45', '49', '53a', '57']}, {'heure': '9h', 'passages': ['01', '05a', '09', '13', '17', '21a', '25', '30', '35', '40', '45', '51', '56']}, {'heure': '10h', 'passages': ['02', '07', '13', '18', '24', '29', '35', '40', '46', '51', '57']}, {'heure': '11h', 'passages': ['02', '08', '13', '19', '24', '30', '35', '41', '46', '52', '57']}, {'heure': '12h', 'passages': ['03', '08', '14', '19', '25', '30', '36', '41', '47', '52', '58']}, {'heure': '13h', 'passages': ['03', '09', '14', '20', '25', '31', '36', '42', '47', '53', '58']}, {'heure': '14h', 'passages': ['04', '09', '15', '20', '26', '31', '37', '42', '48', '53', '59']}, {'heure': '15h', 'passages': ['04', '10', '16', '21', '27', '32', '38', '43', '49', '54']}, {'heure': '16h', 'passages': ['00', '05', '10', '15', '19', '24', '28', '32', '36', '40', '44', '48', '52', '56']}, {'heure': '17h', 'passages': ['00', '04', '08', '12', '16', '20', '24', '28', '32', '36', '40', '44', '48', '52', '56']}, {'heure': '18h', 'passages': ['00', '05a', '08', '12', '16', '21a', '25', '29', '33a', '37', '41', '45a', '49', '54', '58a']}, {'heure': '19h', 'passages': ['02', '07a', '11', '16a', '20', '24a', '28a', '33', '38a', '43', '47a', '52', '58']}, {'heure': '20h', 'passages': ['04a', '10', '16', '23a', '30', '37', '45', '53']}, {'heure': '21h', 'passages': ['03a', '13', '23', '33a', '43', '53']}, {'heure': '22h', 'passages': ['03a', '13', '28a', '42', '58a']}, {'heure': '23h', 'passages': ['13', '28a', '43']}, {'heure': '0h', 'passages': ['13b', '13V', '43c', '43V']}, {'heure': '1h', 'passages': ['13V', '43V']}, {'heure': '2h', 'passages': ['13e', '43f']}];
+
+            premiere_heure_numerique = parseFloat(premiere_heure.slice(0,2)) + parseFloat(premiere_heure.slice(3,5))/60;
+            premiere_heure_numerique_h_moins_1 = premiere_heure_numerique - 0.5;
+            heure_depart = Math.trunc(premiere_heure_numerique_h_moins_1);
+
+            heure_depart = String(heure_depart + "h")
+
+            console.log(heure_depart, horraire_ECSU2["heure"]);
+            heure_depart_list_horraire_BOGE2 = [];
+            heure_depart_list_horraire_FACU2 = [];
+            heure_depart_list_horraire_ECSU2 = [];
+
+            arrets = [horraire_BOGE2,horraire_FACU2,horraire_ECSU2];
+            nom_arrets = ["Bourgonnieres","Faculté","Écoles centrale audencia"]
+            heure_depart_list = [heure_depart_list_horraire_BOGE2,heure_depart_list_horraire_FACU2,heure_depart_list_horraire_ECSU2]
+
+            for (i = 0; i <= arrets.length-1;i=i+1){
+                for(k = 0; k <= (arrets[i]).length-1;k=k+1){
+                    if (arrets[i][k]["heure"] == heure_depart){
+                        heure_depart_list[i] = arrets[i][k]["passages"]
+                    }
+                }
+            }
+ 
+
+            console.log("Mes cours le " + jour_nb_entier + "/"+mois_nb_entier+"/" +annee_nb_entier +" commence à "+ premiere_heure + ", je pourrai commencer à partir de chez moi à"+ heure_depart + " , et je pourrai prendre mon tram à ces minutes : " )
+            for (i = 0; i <= arrets.length-1;i=i+1){
+                nom_arrets_boucle = nom_arrets[i]; 
+                heure_depart_boucle = heure_depart_list[i];
+                console.log("Arret : "+ nom_arrets_boucle);
+                console.log("Horraire : " + heure_depart_boucle);
+            }
+
+        </script>
+    </head>
+</html>
